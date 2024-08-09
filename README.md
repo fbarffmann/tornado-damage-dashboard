@@ -19,10 +19,10 @@ Inspiring visualizations that show our creative ideas can be found in the "visua
 - Process (including ETL)
 - Data Analysis
 - Data Visualizations
-    Heatmap (frequency x lat/long)
-    Bubble Map (magnitude x lat/long)
-    Line Graph (frequency x month)
-    Bar Chart (frequency x time of day)
+    - Heatmap (frequency x lat/long)
+    - Bubble Map (magnitude x lat/long)
+    - Line Graph (frequency x month)
+    - Bar Chart (frequency x time of day)
 - Conclusions
 - Limitations
 
