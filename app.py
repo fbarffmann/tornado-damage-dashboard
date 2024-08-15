@@ -13,6 +13,11 @@ def index():
     """Route to serve the heatmap HTML page."""
     return render_template('heatmap_index.html')
 
+@app.route('/bubble')
+def bubble():
+    """Route to serve the heatmap HTML page."""
+    return render_template('bubble_index.html')
+
 @app.route('/data', methods=['GET'])
 def get_data():
     """API endpoint to retrieve data from MongoDB based on month filter."""
