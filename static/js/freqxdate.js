@@ -1,20 +1,23 @@
-// Fetch the CSV data from the specified file path
-fetch('resources/tornado_cleaned.csv')
-    .then(response => response.text())  // Convert the response to text format
-    .then(csvText => {
-        const rows = csvText.trim().split('\n').slice(1);
+// Fetch the GeoJSON data from the specified endpoint
+fetch(`/data?month=all`)
+    .then(response => response.json())  // Convert the response to JSON format
+    .then(geojson => {
+        const rows = geojson.features.map(feature => ({
+            month: feature.properties.month,
+            day: feature.properties.day,
+            date: feature.properties.date
+        }));
 
         // Initialize objects to store tornado counts by day for each month, total tornado counts per month, and counts by day of the year
         const dailyCountsByMonth = {};
         const monthlyCounts = {};
         const tornadoCountsByDate = {};
 
-        // Iterate through each row of the CSV data
+        // Iterate through each row of the data
         rows.forEach(row => {
-            const cols = row.split(',');
-            const month = cols[2].padStart(2, '0');  // Extract the month
-            const day = cols[3].padStart(2, '0');    // Extract the day
-            const dateKey = `2023-${month}-${day}`;  // Create a unique date key (e.g., "2023-01-01")
+            const month = row.month.toString().padStart(2, '0');  // Extract the month
+            const day = row.day.toString().padStart(2, '0');    // Extract the day
+            const dateKey = row.date;  // Use the provided date key (e.g., "2023-01-01")
 
             // Initialize or update the count for the specific day in the specific month
             if (!dailyCountsByMonth[month]) {
@@ -137,4 +140,4 @@ fetch('resources/tornado_cleaned.csv')
         monthSelect.value = 'all';
         updateChart('all');
     })
-    .catch(error => console.error('Error loading the CSV file:', error));
+    .catch(error => console.error('Error loading the data:', error));

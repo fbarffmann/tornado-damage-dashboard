@@ -9,14 +9,24 @@ db = client['tornado_data_db']
 collection = db['tornado_activity']
 
 @app.route('/')
-def index():
+def homepage():
+    """Route to serve the homepage with a welcome message."""
+    return render_template('homepage.html')
+
+@app.route('/heatmap')
+def heat():
     """Route to serve the heatmap HTML page."""
     return render_template('heatmap_index.html')
 
 @app.route('/bubble')
 def bubble():
-    """Route to serve the heatmap HTML page."""
+    """Route to serve the bubble map HTML page."""
     return render_template('bubble_index.html')
+
+@app.route('/tornado_counts')
+def tornado_counts():
+    """Route to serve the tornado counts chart page."""
+    return render_template('linemap_index.html')
 
 @app.route('/data', methods=['GET'])
 def get_data():

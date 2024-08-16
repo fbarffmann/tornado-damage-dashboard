@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Tornado Counts by Month in 2023</title>
+    <title>Tornado Counts by Day and Month in 2023</title>
     <!-- Include Plotly.js library -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <!-- Include the JavaScript file -->
-    <script src="LineGraph.js" defer></script>
+    <script src="{{ url_for('static', filename='js/freqxdate.js') }}"></script>
 </head>
 <body>
-    <h1>Daily Tornado Counts by Month in 2023</h1>
+    <h1>Tornado Counts by Day and Month in 2023</h1>
     
     <!-- Dropdown for selecting the month or "All Months" -->
     <label for="monthSelect">Select a Month:</label>
