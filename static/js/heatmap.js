@@ -1,6 +1,6 @@
 // Initialize the map
 var map = L.map('heatmap').setView([39.8283, -98.5795], 4.3); // Centered on the USA
-
+var heat = null;
 // Add base tile layer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -24,12 +24,12 @@ function createHeatmap(geojsonData) {
         var damages = feature.properties.damages;
         return [coords[1], coords[0], damages]; // Lat, Lon, Damages
     });
-
-    var heat = L.heatLayer(heatArray, {
+    
+    heat = L.heatLayer(heatArray, {
         radius: 30,
-        blur: 10,
+        blur: 1.5,
         maxZoom: 17,
-        gradient: {0.3: 'blue', 0.55: 'lime', 0.85: 'yellow', 1: 'red'}
+        gradient: {0.2: 'blue', 0.4: 'lime', 0.6: 'red', 1: 'purple'}
     }).addTo(map);
 }
 
@@ -39,7 +39,9 @@ function updateHeatmap(selectedMonth) {
         .then(response => response.json())
         .then(data => {
             // Clear the existing heatmap layers
-            map.eachLayer(function(layer) {
+            if (heat != null)
+                map.removeLayer(heat);
+            map.eachLayer(function(layer) { 
                 if (layer instanceof L.heatLayer) {
                     map.removeLayer(layer);
                 }
@@ -59,3 +61,24 @@ document.getElementById('month-select').addEventListener('change', function() {
     var selectedMonth = this.value;
     updateHeatmap(selectedMonth);
 });
+
+// Add a legend to the map
+var legend = L.control({ position: 'bottomright' });
+
+legend.onAdd = function(map) {
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 0.2, 0.4, 0.6, 1],  // Corresponds to gradient stops
+        labels = ['<strong>Damage Range</strong>'],
+        colors = ['blue', 'lime', 'red', 'purple'];
+
+    // Loop through damage intervals and create a label with a colored square for each interval
+    for (var i = 0; i < grades.length - 1; i++) {
+        div.innerHTML +=
+            '<i style="background:' + colors[i] + '"></i> ' +
+            grades[i] * 100 + '% - ' + grades[i + 1] * 100 + '%<br>';
+    }
+
+    return div;
+};
+
+legend.addTo(map);
