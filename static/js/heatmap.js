@@ -17,7 +17,7 @@ function createHeatmap(geojsonData) {
     }).filter(Boolean));  // Filter out undefined points
 
     // Use Turf to cluster the points based on proximity
-    var clusteredPoints = turf.clustersDbscan(points, 50, { units: 'kilometers' });
+    var clusteredPoints = turf.clustersDbscan(points, 10, { units: 'kilometers' });
 
     var heatArray = clusteredPoints.features.map(feature => {
         var coords = feature.geometry.coordinates;
@@ -29,7 +29,7 @@ function createHeatmap(geojsonData) {
         radius: 30,
         blur: 1.5,
         maxZoom: 17,
-        gradient: {0.2: 'blue', 0.4: 'lime', 0.6: 'red', 1: 'purple'}
+        gradient: {0.3: 'blue', 0.42: 'lime', 0.57: 'red', .9: 'purple'}
     }).addTo(map);
 }
 
@@ -67,15 +67,15 @@ var legend = L.control({ position: 'bottomright' });
 
 legend.onAdd = function(map) {
     var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 0.2, 0.4, 0.6, 1],  // Corresponds to gradient stops
         labels = ['<strong>Damage Range</strong>'],
-        colors = ['blue', 'lime', 'red', 'purple'];
+        colors = ['blue', 'lime', 'red', 'purple'],
+        descriptions = ['Minimal', 'Moderate', 'Significant', 'Severe'];  // Corresponding descriptions
 
-    // Loop through damage intervals and create a label with a colored square for each interval
-    for (var i = 0; i < grades.length - 1; i++) {
+    // Loop through the color descriptions and create a label with a colored square for each interval
+    for (var i = 0; i < descriptions.length; i++) {
         div.innerHTML +=
             '<i style="background:' + colors[i] + '"></i> ' +
-            grades[i] * 100 + '% - ' + grades[i + 1] * 100 + '%<br>';
+            descriptions[i] + '<br>';
     }
 
     return div;
