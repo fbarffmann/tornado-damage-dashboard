@@ -1,31 +1,24 @@
 # Project3
-1. A brief articulation of your chosen topic and rationale
+## Project Overview and Purpose
+With global warming being a looming threat, weather events are likely to occur. We created these maps and charts to help identify areas in the country where tornadoes are more frequent and more damaging in order to educate the American people. To accomplish this, we created a website that shows various views and maps of tornado data in the United States from 2023.
 
-We aim to capture data surrounding tornado activity in the United States in 2023. We are interested in this topic given the growing concern about climate change. We are interested in better understanding the impact of tornados.
+## How to Use/Interact with Project
+Users hit our main webpage and are shown links to the various views of the tornado data that we created. The website is meant to be intuitive for users and should not require instructions. 
 
-2. A link to your dataset(s) and a screenshot of the metadata, if it exists.
+For developers, first you will need to import our tornado data into your local MongoDB server (see Mongo Setup.ipynb for command setup and testing). Next you need to run the Flask server in the environment where MongoDB is running (python app.py). Your Terminal or GitBash will direct you to the URL where the site is hosted.
 
-Our dataset can be found in the "raw_data" folder of this repository. 
-We found the data at the following URL: https://www.spc.noaa.gov/wcm/#data.
+## Ethical Considerations
+We chose ethically sourced data that is not copyrighted and is free for public use. Due to the non-proprietary nature of the data, there is no issue with us displaying this data in any form. We may want to take into consideration the emotional implications of showing this data—we are not interested in scare tactics. This is purely educational.
 
-3. Three or four screenshots of relevant, “inspiring” visualizations that show your creative ideas
+## Data Source
+Data source can be found on the Storm Prediction Center [site](https://www.spc.noaa.gov/wcm/#data).
 
-Inspiring visualizations that show our creative ideas can be found in the "visuals_inspiration" folder of this repository. 
-
-
-4. A sketch of the final design
-
-- Intro to project
-- Process (including ETL)
-- Data Analysis
-- Data Visualizations
-    - Heatmap (damages x lat/long) Finn
-    - Bubble Map (magnitude x lat/long) Jackson
-    - Line Graph (frequency x month) Katie
-    - Bar Chart (frequency x time of day) Parisha
-- Conclusions
-- Limitations
-
-5. A link to the primary GitHub repository where you’ll be housing your work
-
-https://github.com/fbarffmann/Project3
+## Code References
+[Flask](https://flask.palletsprojects.com/en/3.0.x/)
+[PyMongo](https://pymongo.readthedocs.io/en/stable/)
+[Flask with MongoDB](https://www.mongodb.com/resources/products/compatibilities/setting-up-flask-with-mongodb)
+[Leaflet.js](https://leafletjs.com/)
+[Turf.js](https://turfjs.org/)
+[Turf.js with Leaflet.js](https://stackoverflow.com/questions/65320098/using-turf-with-leaflet)
+[JavaScript with Flask API](https://realpython.com/flask-javascript-frontend-for-rest-api/)
+[HTML](https://www.w3schools.com/html/default.asp)
