@@ -15,10 +15,10 @@ Tornado Counts by Day:
 Tornado Counts by Month:
 ![Tornado Counts by Month](visuals/Tornado_Counts_by_Month.png)
 
-Tornado Damages
+Tornado Damages:
 ![Tornado Damages](visuals/Tornado_Damages.png)
 
-Tornado Magnitudes
+Tornado Magnitudes:
 ![Tornado Magnitudes](visuals/Tornado_Magnitudes.png)
 
 ## Ethical Considerations
