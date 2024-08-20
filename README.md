@@ -8,6 +8,7 @@ Users hit our main webpage and are shown links to the various views of the torna
 For developers, first you will need to import our tornado data into your local MongoDB server (see Mongo Setup.ipynb for command setup and testing). Next you need to run the Flask server in the environment where MongoDB is running (python app.py). Your Terminal or GitBash will direct you to the URL where the site is hosted.
 
 Here are some of the visualizations users and developers should see when engaging with the site:
+
 Tornado Counts by Day:
 ![Tornado Counts by Day](visuals/Tornado_Counts_by_Day.png)
 
