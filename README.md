@@ -14,11 +14,11 @@ We chose ethically sourced data that is not copyrighted and is free for public u
 Data source can be found on the Storm Prediction Center [site](https://www.spc.noaa.gov/wcm/#data).
 
 ## Code References
-[Flask](https://flask.palletsprojects.com/en/3.0.x/)
-[PyMongo](https://pymongo.readthedocs.io/en/stable/)
-[Flask with MongoDB](https://www.mongodb.com/resources/products/compatibilities/setting-up-flask-with-mongodb)
-[Leaflet.js](https://leafletjs.com/)
-[Turf.js](https://turfjs.org/)
-[Turf.js with Leaflet.js](https://stackoverflow.com/questions/65320098/using-turf-with-leaflet)
-[JavaScript with Flask API](https://realpython.com/flask-javascript-frontend-for-rest-api/)
-[HTML](https://www.w3schools.com/html/default.asp)
+-[Flask](https://flask.palletsprojects.com/en/3.0.x/)
+-[PyMongo](https://pymongo.readthedocs.io/en/stable/)
+-[Flask with MongoDB](https://www.mongodb.com/resources/products/compatibilities/setting-up-flask-with-mongodb)
+-[Leaflet.js](https://leafletjs.com/)
+-[Turf.js](https://turfjs.org/)
+-[Turf.js with Leaflet.js](https://stackoverflow.com/questions/65320098/using-turf-with-leaflet)
+-[JavaScript with Flask API](https://realpython.com/flask-javascript-frontend-for-rest-api/)
+-[HTML](https://www.w3schools.com/html/default.asp)
