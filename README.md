@@ -7,6 +7,19 @@ Users hit our main webpage and are shown links to the various views of the torna
 
 For developers, first you will need to import our tornado data into your local MongoDB server (see Mongo Setup.ipynb for command setup and testing). Next you need to run the Flask server in the environment where MongoDB is running (python app.py). Your Terminal or GitBash will direct you to the URL where the site is hosted.
 
+Here are some of the visualizations users and developers should see when engaging with the site:
+Tornado Counts by Day:
+![Tornado Counts by Day](visuals/Tornado_Counts_by_Day.png)
+
+Tornado Counts by Month:
+![Tornado Counts by Month](visuals/Tornado_Counts_by_Month.png)
+
+Tornado Damages
+![Tornado Damages](visuals/Tornado_Damages.png)
+
+Tornado Magnitudes
+![Tornado Magnitudes](visuals/Tornado_Magnitudes.png)
+
 ## Ethical Considerations
 We chose ethically sourced data that is not copyrighted and is free for public use. Due to the non-proprietary nature of the data, there is no issue with us displaying this data in any form. We may want to take into consideration the emotional implications of showing this data—we are not interested in scare tactics. This is purely educational.
 
