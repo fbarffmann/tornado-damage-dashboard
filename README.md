@@ -1,6 +1,6 @@
 # Project3
 ## Project Overview and Purpose
-With global warming being a looming threat, weather events are likely to occur. We created these maps and charts to help identify areas in the country where tornadoes are more frequent and more damaging in order to educate the American people. To accomplish this, we created a website that shows various views and maps of tornado data in the United States from 2023.
+As global warming becomes and increasingly looming threat, severe weather events are on the rise. To identify areas in the country where tornadoes are more frequent and more damaging, we created a website that shows various charts and maps of tornado data in the United States from 2023.
 
 ## How to Use/Interact with Project
 Users hit our main webpage and are shown links to the various views of the tornado data that we created. The website is meant to be intuitive for users and should not require instructions. 
