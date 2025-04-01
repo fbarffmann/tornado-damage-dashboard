@@ -38,13 +38,20 @@ def get_data():
     selected_month = request.args.get('month', 'all')
     query = {}
 
-    if selected_month != 'all':
+    if selected_month == 'all':
+        query['Month'] = {'$exists': True}
+    else:
         query['Month'] = int(selected_month)
+        
+    print(f"Running query: {query}")
 
     data = list(collection.find(query))
-    features = []
+    print(f"Query: {query}")
+    print(f"Data count: {len(data)}")
 
+    features = []
     for item in data:
+        print(item)  # TEMP debug
         if item.get('Starting Long') is not None and item.get('Starting Lat') is not None:
             feature = {
                 "type": "Feature",
@@ -59,7 +66,7 @@ def get_data():
                     "date": item.get('Date'),
                     "state": item.get('State'),
                     "magnitude": item.get('Magnitude'),
-                    "damages": item.get('Damages')  # Already numeric
+                    "damages": item.get('Damages')
                 }
             }
             features.append(feature)
