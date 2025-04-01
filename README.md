@@ -122,4 +122,4 @@ We used ethically sourced, public data from the U.S. government. While the conte
 ## 👤 Author
 
 **Finn Brennan Arffmann**  
-[GitHub](https://github.com/fbarffmann) | [LinkedIn](https://www.linkedin.com/in/fbarffmann/)
+[GitHub](https://github.com/fbarffmann) | [LinkedIn](https://www.linkedin.com/in/finn-arffmann/)
